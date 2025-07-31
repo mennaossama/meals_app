@@ -9,6 +9,8 @@ class CustomTextField extends StatelessWidget {
   final bool? isPassword;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final int? maxLines;
+  final TextInputType? keyboardType;
   const CustomTextField(
       {super.key,
       this.hintText,
@@ -16,7 +18,9 @@ class CustomTextField extends StatelessWidget {
       this.width,
       this.isPassword,
       this.controller,
-      this.validator});
+      this.validator,
+      this.maxLines,
+      this.keyboardType});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +30,8 @@ class CustomTextField extends StatelessWidget {
             controller: controller,
             validator: validator,
             autofocus: false,
+            keyboardType: keyboardType ?? TextInputType.text,
+            maxLines: maxLines ?? 1,
             obscureText: isPassword ?? false,
             cursorColor: AppColors.primaryColor,
             decoration: InputDecoration(
@@ -42,8 +48,8 @@ class CustomTextField extends StatelessWidget {
                       const BorderSide(color: Color(0xffE8ECF4), width: 1)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.r),
-                  borderSide:
-                      BorderSide(color: AppColors.primaryColor, width: 1)),
+                  borderSide: const BorderSide(
+                      color: AppColors.primaryColor, width: 1)),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.r),
                   borderSide: const BorderSide(color: Colors.red, width: 1)),

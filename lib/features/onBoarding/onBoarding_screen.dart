@@ -115,7 +115,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       size: const Size(24.0, 6.0),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0)),
-                      color: Color(0xffC2C2C2),
+                      color: const Color(0xffC2C2C2),
                       spacing: const EdgeInsets.symmetric(horizontal: 2.0),
                       activeSize: const Size(24.0, 6.0),
                       activeColor: AppColors.white,
