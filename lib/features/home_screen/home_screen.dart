@@ -70,7 +70,6 @@ class HomeScreen extends StatelessWidget {
                                       rate: meal.rate,
                                       time: meal.time,
                                       onTap: () {
-                                        print('${meal.description}');
                                         GoRouter.of(context).pushNamed(
                                           AppRoutes.mealDetailsScreen,
                                           extra: meal,
